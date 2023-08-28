@@ -2,9 +2,9 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ Values.autoscaling.name }} #{{ include "openmrs-core.fullname" . }}
+  name: {{ .Values.openmrs.name }}-hpa #{{ include "openmrs-core.fullname" . }}
   labels:
-    {{- include "openmrs-core.labels" . | nindent 4 }}
+    app: openmrs-core
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
