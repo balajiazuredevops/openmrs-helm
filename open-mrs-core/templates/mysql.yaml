@@ -2,7 +2,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.mysql.name }}-pvc
+  name: {{ .Release.Name }}-pvc
+  namespace: {{ .Release.Namespace }}
 spec:
   accessModes:
     - ReadWriteOnce
@@ -14,7 +15,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.mysql.name }}-deploy
+  name: {{ .Release.Name }}-sql
+  namespace: {{ .Release.Namespace }}
 spec:
   minReadySeconds: 30
   replicas: 1
@@ -49,12 +51,13 @@ spec:
       volumes:
         - name: mysql-vol
           persistentVolumeClaim: 
-            claimName: {{ .Values.mysql.name}}-pvc
+            claimName: {{ .Release.Name }}-pvc
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.mysql.name }}-svc #mysqlsvc
+  name: {{ .Release.Name }}-sql #mysqlsvc
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     app: db

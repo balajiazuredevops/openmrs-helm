@@ -2,7 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.openmrs.name }}-deploy #openmrs-deploment
+  name: {{ .Release.Name }}-deploy
+  namespace: {{ .Release.Namespace }} #openmrs-deploment
 spec:
   minReadySeconds: 30
   replicas: 5
@@ -43,7 +44,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.openmrs.name }}-svc
+  name: {{ .Release.Name }}-svc
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     app: openmrs-core

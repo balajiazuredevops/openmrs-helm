@@ -2,14 +2,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ .Values.openmrs.name }}-hpa #{{ include "openmrs-core.fullname" . }}
+  name: {{ .Release.Name }}-hpa #{{ include "openmrs-core.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     app: openmrs-core
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ .Values.openmrs.name }}-deploy #{{ include "openmrs-core.fullname" . }}
+    name: {{ .Release.Name }}-deploy #{{ include "openmrs-core.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
