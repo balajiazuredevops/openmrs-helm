@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-deploy
+  name: {{ .Release.Name }}-app
   namespace: {{ .Release.Namespace }} #openmrs-deploment
 spec:
   minReadySeconds: 30
@@ -44,7 +44,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-svc
+  name: {{ .Release.Name }}-app
   namespace: {{ .Release.Namespace }}
 spec:
   selector:

@@ -23,8 +23,8 @@ openmrs:
 
 mysql:
   name: "openmrssql"
-  imagename: "mariadb"
-  imagetag: "10.3"
+  imagename: "mysql"
+  imagetag: "8"
   MYSQL_DATABASE: "openmrs"
   MYSQL_USER: "openmrs"
   MYSQL_PASSWORD: ""
