@@ -35,7 +35,7 @@ spec:
           - name: OMRS_ADMIN_USER_PASSWORD
             value: {{ .Values.mysql.OMRS_DB_NAME }}
           - name: OMRS_ADMIN_PASSWORD_LOCKED
-            value: true
+            value: "true"
           ports:
             - containerPort: 8080
               protocol: TCP
