@@ -30,6 +30,9 @@ spec:
       labels:
         app: db
     spec:
+      nodeSelector: 
+        kubernetes.io/os: linux
+        env: dev
       containers:
         - image: {{.Values.mysql.imagename}}:{{ default .Chart.AppVersion .Values.mysql.imagetag }} #mysql:5.6
           name: mysql

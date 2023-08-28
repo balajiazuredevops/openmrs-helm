@@ -21,6 +21,9 @@ spec:
         app: openmrs-core
         ver: 1.0.0
     spec:
+      nodeSelector: 
+        kubernetes.io/os: linux
+        env: dev
       containers:
         - image: {{.Values.openmrs.imagename}}:{{ default .Chart.AppVersion .Values.openmrs.imagetag }} #balajikolle/openmrs-core:2.4.0
           name: {{ .Values.openmrs.name }}
