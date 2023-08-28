@@ -24,22 +24,21 @@ spec:
         - image: {{.Values.openmrs.imagename}}:{{ default .Chart.AppVersion .Values.openmrs.imagetag }} #balajikolle/openmrs-core:2.4.0
           name: {{ .Values.openmrs.name }}
           env: 
-            - name: OMRS_DB_HOSTNAME
-              value: {{ .Values.mysql.OMRS_DB_HOSTNAME }}
-            - name: OMRS_DB_NAME
-              value: {{ .Values.mysql.OMRS_DB_NAME }}
-            - name: OMRS_DB_USERNAME
-              value: {{ .Values.mysql.OMRS_DB_NAME }}
-            - name: OMRS_DB_PASSWORD
-              value: {{ .Values.mysql.OMRS_DB_NAME }}
-            - name: OMRS_ADMIN_USER_PASSWORD
-              value: {{ .Values.mysql.OMRS_DB_NAME }}
-            - name: OMRS_ADMIN_PASSWORD_LOCKED
-              value: true
+          - name: OMRS_DB_HOSTNAME
+            value: {{ .Values.mysql.OMRS_DB_HOSTNAME }}
+          - name: OMRS_DB_NAME
+            value: {{ .Values.mysql.OMRS_DB_NAME }}
+          - name: OMRS_DB_USERNAME
+            value: {{ .Values.mysql.OMRS_DB_NAME }}
+          - name: OMRS_DB_PASSWORD
+            value: {{ .Values.mysql.OMRS_DB_NAME }}
+          - name: OMRS_ADMIN_USER_PASSWORD
+            value: {{ .Values.mysql.OMRS_DB_NAME }}
+          - name: OMRS_ADMIN_PASSWORD_LOCKED
+            value: true
           ports:
             - containerPort: 8080
               protocol: TCP
---- 
 ---
 apiVersion: v1
 kind: Service

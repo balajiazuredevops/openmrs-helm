@@ -38,14 +38,14 @@ spec:
             - mountPath: /var/lib/mysql
               name: mysql-vol
           env:
-            - name: MYSQL_DATABASE
-              value: {{ .Values.mysql.MYSQL_DATABASE }} #openmrs
-            - name: MYSQL_USER
-              value:  {{ .Values.mysql.MYSQL_USER }} #balajiazure
-            - name: MYSQL_PASSWORD
-              value: {{ .Values.mysql.MYSQL_PASSWORD }} #balajiazure
-            - name: MYSQL_ROOT_PASSWORD
-              value: {{ .Values.mysql.MYSQL_ROOT_PASSWORD }} #password
+          - name: MYSQL_DATABASE
+            value: {{ .Values.mysql.MYSQL_DATABASE }} #openmrs
+          - name: MYSQL_USER
+            value:  {{ .Values.mysql.MYSQL_USER }} #balajiazure
+          - name: MYSQL_PASSWORD
+            value: {{ .Values.mysql.MYSQL_PASSWORD }} #balajiazure
+          - name: MYSQL_ROOT_PASSWORD
+            value: {{ .Values.mysql.MYSQL_ROOT_PASSWORD }} #password
       volumes:
         - name: mysql-vol
           persistentVolumeClaim: 
