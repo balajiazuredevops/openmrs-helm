@@ -53,6 +53,6 @@ spec:
   selector:
     app: openmrs-core
     ver: 1.0.0
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 8080
