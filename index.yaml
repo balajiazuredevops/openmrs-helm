@@ -3,12 +3,12 @@ entries:
   open-mrs-core:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-09-07T16:40:11.6068477+05:30"
+    created: "2023-09-07T22:48:11.9700533+05:30"
     description: A Helm chart for Kubernetes
-    digest: d3300b9a8436440cfd2428fb3d7644dede949356a38d9d3bbb1bf4116b51fc7a
+    digest: bf7982d1c0390021d8d71c3b8a45682df2a712da53b34461c44b1a1e8b5746f2
     name: open-mrs-core
     type: application
     urls:
     - https://raw.githubusercontent.com/balajiazuredevops/openmrs-helm/main/open-mrs-core-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-07T16:40:11.6034546+05:30"
+generated: "2023-09-07T22:48:11.9689968+05:30"
