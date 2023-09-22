@@ -5,14 +5,14 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "alb"
     alb.ingress.kubernetes.io/scheme: "internet-facing"
-    alb.ingress.kubernetes.io/target-type: "ip"
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80,"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:992577546081:certificate/2820ce55-2066-4a1a-950b-6b652ebadb1c"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:992577546081:certificate/ae8c9594-bbf5-4bd6-9043-563a7bbf4043"
     alb.ingress.kubernetes.io/healthcheck-path: "/"
     alb.ingress.kubernetes.io/success-codes: "200,404"
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
 spec:
   rules:
-  - host: "openmrs.xyz"
+  - host: "dev.openmrs.xyz"
     http:
       paths:
       - path: /
