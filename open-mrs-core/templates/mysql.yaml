@@ -10,7 +10,7 @@ spec:
   storageClassName: gp2
   resources:
     requests:
-      storage: 3Gi
+      storage: 2Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
